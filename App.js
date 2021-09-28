@@ -83,7 +83,7 @@ const App: () => Node = () => {
           <Section title="Learn More">
             Read the docs to discover what to do next:
           </Section>
-          <LearnMoreLinks />
+          {/* <LearnMoreLinks /> */}
         </View>
       </ScrollView>
     </SafeAreaView>
