@@ -25,6 +25,7 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import ProfileView from './Views/ProfileView';
 
 const Section = ({children, title}): Node => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -65,32 +66,64 @@ const App: () => Node = () => {
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.js</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          {/* <LearnMoreLinks /> */}
+          <ScrollView  >
+          <View style={styles.bgView}>
+          <ProfileView></ProfileView>
+          <ProfileView></ProfileView>
+          <ProfileView></ProfileView>
+          <ProfileView></ProfileView>
+          <ProfileView></ProfileView>
+          <ProfileView></ProfileView>
+          <ProfileView></ProfileView>
+          <ProfileView></ProfileView>
+          <ProfileView></ProfileView>
+          <ProfileView></ProfileView>
+          <ProfileView></ProfileView>
+          <ProfileView></ProfileView>
+          <ProfileView></ProfileView>
+          <ProfileView></ProfileView>
+          <ProfileView></ProfileView>
+          <ProfileView></ProfileView>
+          <ProfileView></ProfileView>
+          <ProfileView></ProfileView>
+          <ProfileView></ProfileView>
+          <ProfileView></ProfileView>
+          <ProfileView></ProfileView>
+          <ProfileView></ProfileView>
+          <ProfileView></ProfileView>
+          <ProfileView></ProfileView>
         </View>
+            </ScrollView>
+
+            <View style={styles.container}>
+            <View style={styles.anotherbgView}>
+          <Text>Hello</Text>
+          <Text>Hello</Text>
+          <Text>Hello</Text>
+        </View>
+              </View>
+
+
+      
       </ScrollView>
     </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
+  bgView: {
+    flex: 1,
+    backgroundColor: '#9FA8DA',
+    paddingLeft: 30,
+    marginTop: 30,
+    flexDirection: 'column',
+  },
+  anotherbgView: {
+    backgroundColor: 'green',
+    justifyContent: 'center',
+    alignItems: 'center',
+    width:200,
+  },
   sectionContainer: {
     marginTop: 32,
     paddingHorizontal: 24,
@@ -106,6 +139,13 @@ const styles = StyleSheet.create({
   },
   highlight: {
     fontWeight: '700',
+  },
+  container: {
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'yellow',
   },
 });
 
