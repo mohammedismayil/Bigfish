@@ -7,6 +7,8 @@
  */
 
 import React from 'react';
+import { useEffect } from 'react';
+import SplashScreen from 'react-native-splash-screen'
 import type {Node} from 'react';
 import {
   SafeAreaView,
@@ -54,6 +56,12 @@ const Section = ({children, title}): Node => {
 };
 
 const App: () => Node = () => {
+
+  useEffect( () => {
+    SplashScreen.hide();
+  }
+
+  )
   const isDarkMode = useColorScheme() === 'dark';
 
   const backgroundStyle = {
