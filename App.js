@@ -122,7 +122,7 @@ const styles = StyleSheet.create({
   bgView: {
     flex: 1,
     backgroundColor: '#9FA8DA',
-    paddingLeft: 0,
+    paddingLeft: 30,
     marginTop: 30,
     flexDirection: 'column',
   },
