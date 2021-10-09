@@ -1,12 +1,28 @@
 name: "React Native Android Build APK"
-
+description: "This github action automatically builds the android apk under the artifact section"
+author: "realabbas"
+branding:
+      icon: "archive"
+      color: "blue"
 on:
   push:
     branches:
-      - withoutsplash
+      - master
 jobs:
-
-   build-android:
+  # First Job
+  install-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install npm dependencies
+        run: |
+          npm install
+      # For testing
+      - name: Run tests
+        run: |
+          npm test
+  # Second Job
+  build-android:
     needs: install-and-test
     runs-on: ubuntu-latest
     steps:
@@ -43,4 +59,3 @@ jobs:
         with:
           name: app-release.apk
           path: android/app/build/outputs/apk/release/
-
