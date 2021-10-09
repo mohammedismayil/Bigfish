@@ -5,9 +5,7 @@ on:
     branches:
       - withoutsplash
 jobs:
-
-  # Second Job
-  build-android:
+   build-android:
     needs: install-and-test
     runs-on: ubuntu-latest
     steps:
@@ -44,3 +42,4 @@ jobs:
         with:
           name: app-release.apk
           path: android/app/build/outputs/apk/release/
+
