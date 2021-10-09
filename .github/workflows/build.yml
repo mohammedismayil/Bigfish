@@ -2,7 +2,9 @@ name: react-native-android-build-apk
 on:
   push:
     branches:
-- withoutsplash
+      - withoutsplash
+
+
 
 jobs:
   install-and-test:
