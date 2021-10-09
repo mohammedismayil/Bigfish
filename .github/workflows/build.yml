@@ -42,7 +42,7 @@ jobs:
 
       - name: Build Android Release
         run: |
-          gradlew assembleRelease --no-daemon
+          ./gradlew 
 
       
       # Upload to Artifact
