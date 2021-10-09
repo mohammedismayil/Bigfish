@@ -42,7 +42,7 @@ jobs:
 
       - name: Build Android Release
         run: |
-          echo $JAVA_HOME && cd android && ./gradlew assembleRelease && ls && cd app && ls 
+          echo $JAVA_HOME && cd android && ./gradlew assembleRelease 
 
       
       # Upload to Artifact
@@ -50,4 +50,5 @@ jobs:
         uses: actions/upload-artifact@v1
         with:
           name: app-release.apk
-          path: /app/build/outputs/apk/release/
+          path: /build/outputs/apk/release/
+
