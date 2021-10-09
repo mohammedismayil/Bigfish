@@ -42,7 +42,7 @@ jobs:
 
       - name: Build Android Release
         run: |
-          echo $JAVA_HOME && cd android && ./gradlew 
+          echo $JAVA_HOME && cd android && ./gradlew && ls
 
       
       # Upload to Artifact
