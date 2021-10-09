@@ -6,7 +6,7 @@ branding:
 on:
   push:
     branches:
-      - master
+      - withoutsplash
 jobs:
   # First Job
   install-and-test:
