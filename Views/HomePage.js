@@ -15,23 +15,20 @@ import HomeCategoryView from './HomeCategoryView';
 export default class HomePage extends Component {
 
     render() {
-        const isDarkMode = useColorScheme() === 'dark';
-
-        const backgroundStyle = {
-          backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-        };
+        
         return (
-            
-            
-            <ScrollView
+          <View>
+
+{/* <ScrollView
               contentInsetAdjustmentBehavior="automatic"
-              style={backgroundStyle}>
-              <ScrollView>
-                <HomeTitleHeader>
-                  </HomeTitleHeader>
+              style={backgroundStyle}> */}
+              {/* <ScrollView> */}
+              
+                {/* <HomeTitleHeader>
+                  </HomeTitleHeader> */}
                   <HomeCategoryView>
                     </HomeCategoryView>
-                <View style={styles.bgView}>
+                {/* <View style={styles.bgView}>
                   <ProfileView></ProfileView>
                   <ProfileView></ProfileView>
                   <ProfileView></ProfileView>
@@ -56,18 +53,21 @@ export default class HomePage extends Component {
                   <ProfileView></ProfileView>
                   <ProfileView></ProfileView>
                   <ProfileView></ProfileView>
-                </View>
-              </ScrollView>
-      
+                </View> */}
+              {/* </ScrollView> */}
+{/*       
               <View style={styles.container}>
-                <View style={styles.anotherbgView}>
-                  <Text>Hello</Text>
-                  <Text>Hello</Text>
-                  <Text>Hello</Text>
-                </View>
-              </View>
-            </ScrollView>
+                <View style={styles.anotherbgView}> */}
+                  {/* <Text>Hello</Text> */}
+                 
+                {/* </View> */}
+              {/* </View> */}
+            // {/* </ScrollView> */}
           
+
+                  
+          </View>
+            
         )
     }
 }
