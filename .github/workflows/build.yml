@@ -42,7 +42,7 @@ jobs:
 
       - name: Build Android Release
         run: |
-          ./gradlew 
+          cd android && ./gradlew 
 
       
       # Upload to Artifact
