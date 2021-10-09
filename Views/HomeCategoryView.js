@@ -54,7 +54,7 @@ export default class HomeCategoryView extends Component {
           {/* <TouchableOpacity> */}
           <Image
           style={styles.image}
-          source={require('/home/ismayil/ismayildemo/AwesomeProject/Assets/Images/profile.jpg')}></Image>
+          source = {{uri:'https://pbs.twimg.com/profile_images/486929358120964097/gNLINY67_400x400.png'}}></Image>
         <Text style={styles.title}>{title}</Text>
               {/* </TouchableOpacity> */}
      

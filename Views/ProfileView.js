@@ -13,7 +13,7 @@ export default class ProfileView extends Component {
   render() {
     return (
       <View style={styles.bgView}>
-        <Image style={styles.image} source={require('/home/ismayil/ismayildemo/AwesomeProject/Assets/Images/profile.jpg')}></Image>
+        <Image style={styles.image} source = {{uri:'https://pbs.twimg.com/profile_images/486929358120964097/gNLINY67_400x400.png'}}></Image>
         <View style={styles.profileContent}>
         <Text style={{ fontSize: 20,fontWeight: '700' }}>Ismayil</Text>
         <Text style={{ fontSize: 20 }}>25</Text>
