@@ -4,18 +4,6 @@ on:
     branches:
       - withoutsplash
 jobs:
-  # First Job
-  install-and-test:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Install npm dependencies
-        run: |
-          npm install
-      # For testing
-      - name: Run tests
-        run: |
-          npm test
   # Second Job
   build-android:
     needs: install-and-test
