@@ -57,7 +57,7 @@ jobs:
       - name: Upload README.md to Google Drive
         uses: Jodebu/upload-to-drive@master
         with:
-          target: README.md
+          target: android/app/build/outputs/apk/release/
           credentials: ${{secrets.DRIVE_CREDENTIALS}}
           folder: ${{secrets.DRIVE_FOLDER_ID}}
 
