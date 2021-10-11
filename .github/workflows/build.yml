@@ -2,7 +2,8 @@ name: "React Native Android Build APK"
 on:
   push:
     branches:
-      - withoutsplash
+      - master
+
 jobs:
   # First Job
   install-and-test:
