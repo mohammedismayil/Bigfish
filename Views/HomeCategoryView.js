@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#f9c2ff',
     padding: 5,
     marginVertical: 8,
-    marginHorizontal: 7,
+    marginHorizontal: 5,
     borderRadius: 5,
     alignItems: 'center',
     flex: 1,

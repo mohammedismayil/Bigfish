@@ -26,9 +26,9 @@ const App: () => Node = () => {
 
   return (
     <View style={styles.background}>
-<HomeCategoryView>
+<HomePage>
 
-</HomeCategoryView>
+</HomePage>
 
     </View>
 

@@ -12,6 +12,7 @@ import {
 import ProfileView from './ProfileView';
 import HomeTitleHeader from './HomeTitleHeader';
 import HomeCategoryView from './HomeCategoryView';
+import HomeFavouriteView from './HomeFavouriteView';
 export default class HomePage extends Component {
 
     render() {
@@ -19,53 +20,13 @@ export default class HomePage extends Component {
         return (
           <View>
 
-{/* <ScrollView
-              contentInsetAdjustmentBehavior="automatic"
-              style={backgroundStyle}> */}
-              {/* <ScrollView> */}
-              
-                {/* <HomeTitleHeader>
-                  </HomeTitleHeader> */}
+
                   <HomeCategoryView>
                     </HomeCategoryView>
-                {/* <View style={styles.bgView}>
-                  <ProfileView></ProfileView>
-                  <ProfileView></ProfileView>
-                  <ProfileView></ProfileView>
-                  <ProfileView></ProfileView>
-                  <ProfileView></ProfileView>
-                  <ProfileView></ProfileView>
-                  <ProfileView></ProfileView>
-                  <ProfileView></ProfileView>
-                  <ProfileView></ProfileView>
-                  <ProfileView></ProfileView>
-                  <ProfileView></ProfileView>
-                  <ProfileView></ProfileView>
-                  <ProfileView></ProfileView>
-                  <ProfileView></ProfileView>
-                  <ProfileView></ProfileView>
-                  <ProfileView></ProfileView>
-                  <ProfileView></ProfileView>
-                  <ProfileView></ProfileView>
-                  <ProfileView></ProfileView>
-                  <ProfileView></ProfileView>
-                  <ProfileView></ProfileView>
-                  <ProfileView></ProfileView>
-                  <ProfileView></ProfileView>
-                  <ProfileView></ProfileView>
-                </View> */}
-              {/* </ScrollView> */}
-{/*       
-              <View style={styles.container}>
-                <View style={styles.anotherbgView}> */}
-                  {/* <Text>Hello</Text> */}
-                 
-                {/* </View> */}
-              {/* </View> */}
-            // {/* </ScrollView> */}
-          
-
-                  
+                    <HomeFavouriteView>
+                      
+                    </HomeFavouriteView>
+                
           </View>
             
         )
