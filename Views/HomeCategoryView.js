@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, FlatList, TouchableOpacity} from 'react-native';
+import {View, FlatList, TouchableOpacity,Alert,} from 'react-native';
 import {
   SafeAreaView,
   ScrollView,
@@ -47,23 +47,27 @@ export default class HomeCategoryView extends Component {
       },
     ];
 
-    const renderItem = ({item}) => <Item title={item.title} />;
-    const Item = ({title}) => (
+    const renderItem = ({item}) => <Item item={item} />;
+    const Item = ({item}) => (
       <View style={styles.item}>
 
-          {/* <TouchableOpacity> */}
-          <Image
+          <TouchableOpacity onPress={() => onPressItem(item)}>
+
+            <View style={styles.iteminner}>
+            <Image
           style={styles.image}
           source = {{uri:'https://pbs.twimg.com/profile_images/486929358120964097/gNLINY67_400x400.png'}}></Image>
-        <Text style={styles.title}>{title}</Text>
-              {/* </TouchableOpacity> */}
+        <Text style={styles.title}>{item.title}</Text>
+              </View>
+         
+              </TouchableOpacity>
      
       </View>
     );
 
-    const flatListTapped = ({id}) => {
-        console.log(id)
-        console.log("flat list tapped")
+    const onPressItem = (item) => {
+     
+      Alert.alert("hey you have done wirelessg debugging--");
     }
 
     return (
@@ -89,9 +93,15 @@ const styles = StyleSheet.create({
     marginHorizontal: 5,
     borderRadius: 5,
     alignItems: 'center',
-    flex: 1,
+    
     justifyContent: 'center',
-    height: 30,
+    height: 35,
+    // width:100,
+  },
+
+  iteminner:{
+    flex: 1,
+    flexDirection: 'row',
   },
   title: {
     fontSize: 15,

@@ -7,37 +7,36 @@
  */
 
 import React from 'react';
-import { View,StyleSheet,StatusBar } from 'react-native';
+import {View, StyleSheet, Text, StatusBar} from 'react-native';
 import HomeCategoryView from './Views/HomeCategoryView';
 import HomePage from './Views/HomePage';
-
-
-
-
-
+import {NavigationContainer} from '@react-navigation/native';
 
 import HomeTitleHeader from './Views/HomeTitleHeader';
 import ProfileView from './Views/ProfileView';
-
-
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+const Stack = createNativeStackNavigator();
+function HomeScreen() {
+  return (
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Text>Home Screen</Text>
+    </View>
+  );
+}
 
 const App: () => Node = () => {
-
-
   return (
-    <View style={styles.background}>
-<HomePage>
-
-</HomePage>
-
-    </View>
-
+    <NavigationContainer>
+    <Stack.Navigator>
+      <Stack.Screen name="Home" component={HomePage} />
+    </Stack.Navigator>
+  </NavigationContainer>
   );
 };
 
 const styles = StyleSheet.create({
-  background:{
-    backgroundColor:'white',
+  background: {
+    backgroundColor: 'white',
   },
   container: {
     flex: 1,
@@ -65,6 +64,5 @@ const styles = StyleSheet.create({
     width: 20,
   },
 });
-
 
 export default App;

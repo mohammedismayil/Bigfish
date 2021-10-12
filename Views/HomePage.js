@@ -21,7 +21,7 @@ export default class HomePage extends Component {
           <View>
 
 
-                  <HomeCategoryView>
+                  <HomeCategoryView >
                     </HomeCategoryView>
                     <HomeFavouriteView>
                       
