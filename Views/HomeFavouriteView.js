@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Text, View,Image,FlatList ,StyleSheet,TouchableOpacity,} from 'react-native'
+import { Text, View,Image,FlatList ,StyleSheet,TouchableOpacity, Alert,} from 'react-native'
 
 export default class HomeFavouriteView extends Component {
     render() {
@@ -54,10 +54,16 @@ export default class HomeFavouriteView extends Component {
             },
           ];
           const renderItem = ({item}) => <Item item={item} />;
+
+          const onPressItem = (item) => {
+            console.log(item);
+            Alert.alert(item.name);
+          }
           const Item = ({item}) => (
+           
             <View style={styles.item}>
       
-                
+      <TouchableOpacity onPress={() => onPressItem(item)}>
                 <Image
                 style={styles.image}
                 source = {{uri:'https://media.istockphoto.com/photos/pizza-picture-id184946701?k=20&m=184946701&s=612x612&w=0&h=LRc4BfIMzP3QW9QKr5eria66F1ZeV2EY8xXeva-E6io='}}></Image>
@@ -72,9 +78,10 @@ export default class HomeFavouriteView extends Component {
                   </View>
                  
               </View>
-              
+              </TouchableOpacity>
            
             </View>
+           
           );
         //   const _onPress = () => {
         //     console.log("hey")
@@ -82,10 +89,10 @@ export default class HomeFavouriteView extends Component {
         return (
             <View>
                 <Text> Favourites </Text>
-                <TouchableOpacity onPress={this._onPress}>
+               
                 <FlatList data={DATA} renderItem={renderItem} horizontal />
                  
-                </TouchableOpacity>
+               
             </View>
         )
     }
