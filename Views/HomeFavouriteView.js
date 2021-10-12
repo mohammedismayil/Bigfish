@@ -56,8 +56,9 @@ export default class HomeFavouriteView extends Component {
           const renderItem = ({item}) => <Item item={item} />;
 
           const onPressItem = (item) => {
-            console.log(item);
-            Alert.alert(item.name);
+            
+            Alert.alert("hey you have done wirelessg debugging--");
+          
           }
           const Item = ({item}) => (
            
@@ -79,13 +80,11 @@ export default class HomeFavouriteView extends Component {
                  
               </View>
               </TouchableOpacity>
-           
+
             </View>
            
           );
-        //   const _onPress = () => {
-        //     console.log("hey")
-        //   };
+   
         return (
             <View>
                 <Text> Favourites </Text>
