@@ -7,10 +7,10 @@
  */
 
 import React from 'react';
-import { useEffect } from 'react';
-import SplashScreen from 'react-native-splash-screen'
 import type {Node} from 'react';
 import {
+  Alert,
+  Button,
   SafeAreaView,
   ScrollView,
   StatusBar,
@@ -56,105 +56,70 @@ const Section = ({children, title}): Node => {
 };
 
 const App: () => Node = () => {
-
-  useEffect( () => {
-    SplashScreen.hide();
-  }
-
-  )
   const isDarkMode = useColorScheme() === 'dark';
 
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
+    flex: 1,
   };
 
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-          <ScrollView  >
-          <View style={styles.bgView}>
-          <ProfileView></ProfileView>
-          <ProfileView></ProfileView>
-          <ProfileView></ProfileView>
-          <ProfileView></ProfileView>
-          <ProfileView></ProfileView>
-          <ProfileView></ProfileView>
-          <ProfileView></ProfileView>
-          <ProfileView></ProfileView>
-          <ProfileView></ProfileView>
-          <ProfileView></ProfileView>
-          <ProfileView></ProfileView>
-          <ProfileView></ProfileView>
-          <ProfileView></ProfileView>
-          <ProfileView></ProfileView>
-          <ProfileView></ProfileView>
-          <ProfileView></ProfileView>
-          <ProfileView></ProfileView>
-          <ProfileView></ProfileView>
-          <ProfileView></ProfileView>
-          <ProfileView></ProfileView>
-          <ProfileView></ProfileView>
-          <ProfileView></ProfileView>
-          <ProfileView></ProfileView>
-          <ProfileView></ProfileView>
+    <SafeAreaView style={{flex: 1, backgroundColor: Colors.white}}>
+      <View style={styles.containerMain}>
+        <Text> Main Content Here</Text>
+        <View style={styles.bottomView}>
+          <Text style={styles.textStyle}>Bottom View</Text>
         </View>
-            </ScrollView>
-
-            <View style={styles.container}>
-            <View style={styles.anotherbgView}>
-          <Text>Hello</Text>
-          <Text>Hello</Text>
-          <Text>Hello</Text>
-        </View>
-              </View>
-
-
-      
-      </ScrollView>
+        <Button
+          style={styles.bottomView}
+          title="Show alert"
+          onPress={showAlert}
+        />
+      </View>
     </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
-  bgView: {
+  containerMain: {
     flex: 1,
-    backgroundColor: '#9FA8DA',
-    paddingLeft: 30,
-    marginTop: 30,
-    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
-  anotherbgView: {
-    backgroundColor: 'green',
+  bottomView: {
+    width: '100%',
+    height: 50,
+    backgroundColor: '#EE5407',
     justifyContent: 'center',
     alignItems: 'center',
-    width:200,
+    position: 'absolute', //Here is the trick
+    bottom: 0, //Here is the trick
   },
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
+  textStyle: {
+    color: '#fff',
     fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-  container: {
-    flex: 1,
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'yellow',
   },
 });
+const showAlert = () =>
+  Alert.alert(
+    'Alert Title',
+    'My Alert Msg',
+    [
+      {
+        text: 'Ask me later',
+        onPress: () => console.log('Ask me later pressed'),
+      },
+      {
+        text: 'Cancel',
+        onPress: () => console.log('Cancel Pressed'),
+        style: 'cancel',
+      },
+      {
+        text: 'OK',
+        onPress: () => console.log('OK Pressed'),
+      },
+    ],
+    {cancelable: false},
+  );
 
 export default App;
