@@ -1,0 +1,76 @@
+name: "React Native Android Build APK"
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  # First Job
+  install-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install npm dependencies
+        run: |
+          npm install
+  # Second Job
+  build-android:
+    needs: install-and-test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install npm dependencies
+        run: |
+          npm install
+
+      - name: Cache Gradle Wrapper
+        uses: actions/cache@v2
+        with:
+          path: ~/.gradle/wrapper
+          key: ${{ runner.os }}-gradle-wrapper-${{ hashFiles('gradle/wrapper/gradle-wrapper.properties') }}
+
+      - name: Cache Gradle Dependencies
+        uses: actions/cache@v2
+        with:
+          path: ~/.gradle/caches
+          key: ${{ runner.os }}-gradle-caches-${{ hashFiles('gradle/wrapper/gradle-wrapper.properties') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-caches-
+
+      - name: Make Gradlew Executable
+        run: cd android && chmod +x ./gradlew
+        # Build Command
+
+      - name: Build Android Release
+        run: |
+          echo $JAVA_HOME && cd android && ./gradlew assembleRelease 
+
+      
+      # Upload to Artifact
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: app-release.apk
+          path: android/app/build/outputs/apk/release/
+          buildAndTestForSomePlatforms:
+      - name: Upload to Google Drive
+        uses: satackey/action-google-drive@v1
+        with:
+         skicka-tokencache-json: ${{secrets.DRIVE_CREDENTIALS}}
+         upload-from: android/app/build/outputs/apk/release/
+         upload-to: ${{secrets.DRIVE_FOLDER_ID}}
+
+
+         # For those who set up Google Drive API client ID and secret themselves
+         google-client-id: ${{ secrets.GOOGLE_CLIENT_ID }}
+         google-client-secret: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+# # Upload to Drive
+# - name: Upload public folder to Google Drive
+#   uses: Jodebu/upload-to-drive@master
+#   id: driveUpload
+#   with:
+#     target: android/app/build/outputs/apk/release/
+#     credentials: ${{secrets.DRIVE_CREDENTIALS}}
+#     folder: ${{secrets.DRIVE_FOLDER_ID}}
+
+
