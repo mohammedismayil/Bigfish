@@ -107,7 +107,7 @@ const showAlert = () =>
     [
       {
         text: 'Ask me later',
-        onPress: () => console.log('Ask me later pressed'),
+        onPress: () => console.log('Ask me later pressed,OK'),
       },
       {
         text: 'Cancel',

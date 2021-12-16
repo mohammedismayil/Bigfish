@@ -53,17 +53,17 @@ jobs:
           name: app-release.apk
           path: android/app/build/outputs/apk/release/
           buildAndTestForSomePlatforms:
-      - name: Upload to Google Drive
-        uses: satackey/action-google-drive@v1
-        with:
-         skicka-tokencache-json: ${{secrets.DRIVE_CREDENTIALS}}
-         upload-from: android/app/build/outputs/apk/release/
-         upload-to: ${{secrets.DRIVE_FOLDER_ID}}
+      # - name: Upload to Google Drive
+      #   uses: satackey/action-google-drive@v1
+      #   with:
+      #    skicka-tokencache-json: ${{secrets.DRIVE_CREDENTIALS}}
+      #    upload-from: android/app/build/outputs/apk/release/
+      #    upload-to: ${{secrets.DRIVE_FOLDER_ID}}
 
 
-         # For those who set up Google Drive API client ID and secret themselves
-         google-client-id: ${{ secrets.GOOGLE_CLIENT_ID }}
-         google-client-secret: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+      #    # For those who set up Google Drive API client ID and secret themselves
+      #    google-client-id: ${{ secrets.GOOGLE_CLIENT_ID }}
+      #    google-client-secret: ${{ secrets.GOOGLE_CLIENT_SECRET }}
 # # Upload to Drive
 # - name: Upload public folder to Google Drive
 #   uses: Jodebu/upload-to-drive@master
