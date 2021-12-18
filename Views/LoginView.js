@@ -10,10 +10,26 @@ import {
   StatusBar,
   TextInput,
 } from 'react-native';
+import {ToastAndroid, Platform, AlertIOS} from 'react-native';
 
 export default function LoginView({navigation}) {
   const [email, onChangeEmail] = React.useState(null);
   const [password, onChangePassword] = React.useState(null);
+  function validateData() {
+    if (email == 'admin' && password == '123456') {
+      console.log('You can go through this');
+      ToastAndroid.show('You can go through this', ToastAndroid.TOP);
+    } else {
+      if (Platform.OS === 'android') {
+        ToastAndroid.show(
+          'Please enter valid email, password',
+          ToastAndroid.SHORT,
+        );
+      } else {
+        AlertIOS.alert(msg);
+      }
+    }
+  }
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: '#13111a'}}>
       <StatusBar barStyle="dark-content" backgroundColor="#ecf0f1" />
@@ -46,7 +62,7 @@ export default function LoginView({navigation}) {
           Don't have an account? Register
         </Text>
         <TouchableOpacity
-          // onPress={() => this.props.navigation.navigate('Login')}
+          onPress={() => validateData()}
           style={styles.registerButton}>
           <Text style={styles.registerbuttonText}>Register</Text>
         </TouchableOpacity>
