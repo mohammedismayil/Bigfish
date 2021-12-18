@@ -26,7 +26,14 @@ const App: () => Node = () => {
         <Stack.Screen
           name="Home"
           component={WelcomeView}
-          options={{title: 'Welcome'}}
+          options={{
+            title: 'Welcome',
+            headerShown: false,
+            headerTransparent: true,
+            headerStyle: {
+              backgroundColor: 'transparent',
+            },
+          }}
         />
         <Stack.Screen
           name="Login"
@@ -34,7 +41,10 @@ const App: () => Node = () => {
           options={{
             title: '',
             headerLeft: props => (
-              <BackButton onPress={() => navigation.navigate('Home')} />
+              <BackButton
+                onPress={() => navigation.navigate('Home')}
+                navigation={props.navigation}
+              />
             ),
             headerTintColor: 'white',
             headerTransparent: true,

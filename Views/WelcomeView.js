@@ -11,6 +11,8 @@ import {
 } from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {withNavigation} from 'react-navigation';
+
 export default class WelcomeView extends Component {
   render() {
     return (
@@ -25,16 +27,16 @@ export default class WelcomeView extends Component {
             a new mobile and desktop application
           </Text>
           <View style={styles.bottomView}>
-            {/* <TouchableOpacity style={styles.loginButton}>
+            <TouchableOpacity
+              onPress={() => this.props.navigation.navigate('Login')}
+              style={styles.loginButton}>
               <Text style={styles.loginbuttonText}>Login</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.registerButton}>
-              <Text style={styles.registerbuttonText}>Register</Text>
-            </TouchableOpacity> */}
-            <Button
-              title="Go to Jane's profile"
+            <TouchableOpacity
               onPress={() => this.props.navigation.navigate('Login')}
-            />
+              style={styles.registerButton}>
+              <Text style={styles.registerbuttonText}>Register</Text>
+            </TouchableOpacity>
           </View>
         </View>
       </SafeAreaView>
