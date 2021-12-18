@@ -1,10 +1,19 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+  Image,
+  Button,
+  StatusBar,
+} from 'react-native';
 
 export default function LoginView({navigation}) {
   return (
-    <View>
-      <Text>LoginView</Text>
-    </View>
+    <SafeAreaView style={{flex: 1, backgroundColor: '#13111a'}}>
+      <StatusBar barStyle="dark-content" backgroundColor="#ecf0f1" />
+    </SafeAreaView>
   );
 }
