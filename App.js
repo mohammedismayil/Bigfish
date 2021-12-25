@@ -16,6 +16,7 @@ import WelcomeView from './Views/WelcomeView';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import LoginView from './Views/LoginView';
 import BackButton from './Components/BackButton';
+import HomeView from './Views/HomeView';
 
 const Stack = createNativeStackNavigator();
 const App: () => Node = () => {
@@ -25,14 +26,14 @@ const App: () => Node = () => {
       <Stack.Navigator>
         <Stack.Screen
           name="Home"
-          component={WelcomeView}
+          component={HomeView}
           options={{
-            title: 'Welcome',
+            // title: 'Welcome',
             headerShown: false,
-            headerTransparent: true,
-            headerStyle: {
-              backgroundColor: 'transparent',
-            },
+            // headerTransparent: true,
+            // headerStyle: {
+            //   backgroundColor: 'transparent',
+            // },
           }}
         />
         <Stack.Screen
